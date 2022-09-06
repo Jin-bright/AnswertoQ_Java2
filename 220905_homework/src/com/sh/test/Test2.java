@@ -13,14 +13,14 @@ public class Test2 {
 		String name;
 		int age;
 		String gender;
-		String phoneNum;
+		String phoneNum; // 앞에 0으로 시작 되는거라서 int long이 안되고, 8진수 처리됨 
 		String email;
 		String add;
 		//2.값대입
 		name = "김혜진";
 		age =  29;
 		gender =  "여";
-		phoneNum= "01033333333";
+		phoneNum= "01033333333"; 
 		email = "ggg@gmail.com";
 		add = "경기도 광주시";
 		
