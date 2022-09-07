@@ -11,13 +11,16 @@ public class Question1 {
 	=> x = ((3 + 4 ) + 5) ;
 	
 	2. x = y = z;
-	=> ((x = y) = z)
+	=> ((x = y) = z) 땡 !!! 
+	==> (x = (y = z))
 	
 	3. z *= ++y + 5; 
 	답1 => z *= (++y + 5) 
 	답2 => z = ( z * (++y + 5) )
+	==> 더 정확하게는  z *= ( (++y) + 5)  
 
-		
+	4. a || b && c || d; 
+	=> ((a ||(b && c)) || d )
 		
  2. 처리과정을 표현하기  - 문제 & 내 답 
  * 예 : 
@@ -30,11 +33,11 @@ public class Question1 {
 문제
 
     1. (true && true) || false
-    => (true) //  뒤에연산x
+    => (true)  || false  //  뒤에연산x
     =>  true
      
     2. (false && true) || true
-    => (false) || true
+    => (false) || true // 뒤에 연산x) 
     => true
     
     3. (false && true) || false || true

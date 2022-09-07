@@ -6,9 +6,16 @@ public class Example {
 
 	public void example1(){
 		
-		int a = 23;
-		int b = 7;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 1 : ");
+		int a = sc.nextInt();
 		
+		System.out.print("정수 2 : ");
+		int b = sc.nextInt();
+		
+		
+		
+
 		//출력
 		System.out.println(" 더하기 결과 : " + (a+b) );
 		System.out.println(" 빼기 결과 : " + (a-b) );
@@ -18,9 +25,14 @@ public class Example {
 	}
 	
 	public void example2(){
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 1 : ");
+		float x = sc.nextFloat();
+		
+		System.out.print("정수 2 : ");
+		float y = sc.nextFloat();
 	
-		float x = 13.5f;
-		float y = 41.7f;
 	
 		float xp = x*y;
 		float xc = (x+y)*2;

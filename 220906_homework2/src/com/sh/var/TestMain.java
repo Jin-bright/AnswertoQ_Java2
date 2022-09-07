@@ -6,9 +6,9 @@ public class TestMain {
 
 		Example e = new Example();
 		//호출
-		e.example1();
+//		e.example1();
 		e.example2();
-		e.example3();
+//		e.example3();
 
 	}
 
