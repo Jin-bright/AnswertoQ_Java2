@@ -24,6 +24,31 @@ public class Example {
 		System.out.println(" 나누기 한 나머지 : " + (a%b) );			
 	}
 	
+	
+	/* 잘못 이해했음,, Scanner 이용해서 값을 받았어야함. 다시 푼 코드 
+	public void example1(){
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 1 : ");
+		int a = sc.nextInt();
+		
+		System.out.print("정수 2 : ");
+		int b = sc.nextInt();
+		
+		
+		
+
+		//출력
+		System.out.println(" 더하기 결과 : " + (a+b) );
+		System.out.println(" 빼기 결과 : " + (a-b) );
+		System.out.println(" 곱하기 결과 : "  + (a*b) );
+		System.out.println(" 나누기한 몫 : " + (a/b) );			
+		System.out.println(" 나누기 한 나머지 : " + (a%b) );			
+	}
+	
+	
+	
+	*/
 	public void example2(){
 		
 		Scanner sc = new Scanner(System.in);
@@ -39,8 +64,27 @@ public class Example {
 		
 		System.out.println( "면적 : " + xp);
 		System.out.println( "둘레 : " + xc);
-	
 	}
+	
+	/* 잘못 이해했음,, Scanner 이용해서 값을 받았어야함. 다시 푼 코드 
+		public void example2(){
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 1 : ");
+		float x = sc.nextFloat();
+		
+		System.out.print("정수 2 : ");
+		float y = sc.nextFloat();
+	
+	
+		float xp = x*y;
+		float xc = (x+y)*2;
+		
+		System.out.println( "면적 : " + xp);
+		System.out.println( "둘레 : " + xc);
+	}
+	*/
+	
 	
 	
 	public void example3(){

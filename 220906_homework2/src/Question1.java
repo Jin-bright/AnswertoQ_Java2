@@ -17,7 +17,17 @@ public class Question1 {
 	3. z *= ++y + 5; 
 	답1 => z *= (++y + 5) 
 	답2 => z = ( z * (++y + 5) )
+<<<<<<< HEAD
 	==> 더 정확하게는  z *= ( (++y) + 5)  
+=======
+	
+	4. a || b && c || d; 
+	=> ((a ||(b && c)) || d )
+	
+*** 	
+2. x = y = z; < 틀림 다시 해야됨 
+
+>>>>>>> refs/remotes/origin/master
 
 	4. a || b && c || d; 
 	=> ((a ||(b && c)) || d )
