@@ -19,7 +19,7 @@ public class RandomTest {
 			
 		// 컴텨 입력 
 		int com = (int)(Math.random()*3)+1; 
-		//System.out.println(com); < 컴텨가 뭐 냈나 봄,,
+		System.out.println(com); // < 컴텨가 뭐 냈나 봄,,
 			
 		// 첫 문장 
 		System.out.println("=== 가위 바위 보 게임 ===");
@@ -87,8 +87,9 @@ public class RandomTest {
 		
 		//4. 0 또는 1
 		int num4 = (int)(Math.random()*2);
+		boolean bool = num4==0 ? true : false ; 
 
-		System.out.println( num3 );
+
 		
 	
 	}
