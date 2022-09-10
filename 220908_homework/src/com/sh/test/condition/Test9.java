@@ -54,11 +54,11 @@ public class Test9 {
 			return;
 		}
 		
-		String Mename ;
-		int MenamePrice;
+		String Mename="";
+		int MenamePrice=0;
 		
-		String Siname ;
-		int SinamePrice;
+		String Siname="";
+		int SinamePrice=0;
 		
 		// 주메뉴 이름, 가격 선언 
 		if( pickmenu.equals("a")) {
@@ -77,9 +77,11 @@ public class Test9 {
 			Mename = "한우버거";
 			MenamePrice = 10000;
 		}
-		else 
+		else if( pickmenu.equals("e")) {
 			Mename = "디버거";
 			MenamePrice = 7000;
+		}
+		
 		
 		// 사이드메뉴 이름, 가격 선언 
 		if( pickside.equals("1")) {
