@@ -55,7 +55,7 @@ System.out.printf("---------- <<수도세>> -----------%n"
 				+ "선택메뉴번호 : %s.%s을(를) 선택하셨습니다.%n"
 				+ "사용요금 : %d%n"
 				+ "수도세 : %d%n"
-				+ "총수도요금 : %d%n",menuPick,menuExplain,priceOfUsage,priceOfwater,totalPrice);
+				+ "총수도요금 : %d원%n",menuPick,menuExplain,priceOfUsage,priceOfwater,totalPrice);
 
 
 	}
