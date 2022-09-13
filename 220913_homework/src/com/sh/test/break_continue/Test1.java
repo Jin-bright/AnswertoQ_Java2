@@ -8,10 +8,10 @@ public class Test1 {  //  [문제 1]
 		
 		Test1 t = new Test1();
 		t.test1();
-		t.test2();
+	//	t.test2();
 	}
 	
-	public void test1() {
+	public void test1() { // cotinue 문 쓴거 
 		
 		Scanner sc = new Scanner(System.in);	
 	
@@ -20,9 +20,13 @@ public class Test1 {  //  [문제 1]
 		
 		int mul = 1;
 		for(int i=1; i<=a; i++ ) {
-			if(i%2!=0) {
-				mul *= i;
-			} //if 문종료
+			
+			
+			if(i%2==0) 
+				continue;
+				
+			mul *= i;
+			
 		}//for문 종료
 		
 		System.out.println( "홀수의 곱은 : " + mul );
