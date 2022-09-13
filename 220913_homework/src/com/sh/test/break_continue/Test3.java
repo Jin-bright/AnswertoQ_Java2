@@ -7,37 +7,12 @@ public class Test3 {
 	public static void main(String[] args) {
 
 		Test3 t = new Test3();
-	//	t.test();
-		t.test2();
+		t.test();
+		;
 	}
 	
-	public void test() { // break_continue 안쓴거 
-		
-		Scanner sc = new Scanner(System.in);
-		System.out.print("정수를 입력하세요(단,1보다 큰 정수) > ");
-		int num = sc.nextInt();
-		
-		if(num<2) {
-			System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
-			System.out.print("정수를 입력하세요(단,1보다 큰 정수) > ");
-			num = sc.nextInt();
-		}
-		
-	
-		if(num>3) {
-			if(	num%2==0 || num%3==0 ) {  
-				System.out.println("소수가 아니다");
-			}
-			else 
-				System.out.println("소수다.");
-		}
-			
-		if(num==2 || num==3) {
-			System.out.println("소수다.");
-		}
-	}
-	
-	public void test2() { // break,, 
+
+	public void test() { // break,, 
 		
 	
 		Scanner sc = new Scanner(System.in);
@@ -53,7 +28,7 @@ public class Test3 {
 		
 		boolean numConfirm = true;
 
-		for(int i = 2; i <= num/2; i++) {
+		for(int i = 2; i <= num/2; i++) { //   /2, /3  말고 다른 풀이 방법 확인하기  
 			if(num%i == 0) {
 				numConfirm = false;
 				break;
