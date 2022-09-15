@@ -1,5 +1,7 @@
 package sh.java.test.array;
 
+import java.util.Arrays;
+
 public class Test2 {
 
 	public static void main(String[] args) {// [문제2] 
@@ -17,9 +19,13 @@ public class Test2 {
 		fruit[1] = "복숭아";
 		fruit[2] = "키위";
 		fruit[3] = "사과";
-		fruit[4] = "바나나";   // 초기화 
+		fruit[4] = "바나나";   // 값대입 
 		
 		System.out.println( fruit[4]);
+		// 연습 
+		System.out.println( fruit );
+		System.out.println( fruit.toString() );
+		System.out.println(Arrays.toString(fruit));
 	}
 	
 	
