@@ -3,9 +3,17 @@ package com.sh.test.array.sort;
 import java.util.Arrays;
 
 public class Test {
-
+	
+	
+	
+	
 	public static void main(String[] args) {
 	
+		Test t = new Test();
+		t.exercise1();
+		
+	}
+	/*
 		int[] arr = new int[10];
 		
 		// 값대입
@@ -26,9 +34,26 @@ public class Test {
 		}// end 바깥 for문 
 		
 		System.out.println( Arrays.toString( arr )); // 출력 
+*/
+		
+		private void exercise1() {
+			
+			int[][] arr = new int[3][5];
+			
+			//값쓰기 및 5의 배수 검사
+			for (int i = 0; i < arr.length; i++) {
+				for (int j = 0; j < arr[i].length; j++) {
+					arr[i][j] = (int)(Math.random()*100)+1;
+
+					if(arr[i][j] % 5 == 0){
+							System.out.printf("%d(%d, %d)%n", arr[i][j], i, j);
+					}
+				}
+			}
+		}
 	}
 
-}
+
 
 /*
 com.sh.test.array.sort.Test
