@@ -2,6 +2,8 @@ package com.sh.oop.emp.model;
 
 import java.util.Scanner;
 
+import com.sh.oop.emp.run.EmpTest;
+
 public class Employee { //private + field 선언 
 
 	
@@ -16,7 +18,35 @@ public class Employee { //private + field 선언
 	private String phone;
 	private String address; 
  
+	
+	public void mainMenu(){ // +++ 메인메뉴 메서드
+		
+		String program = ("******* 사원 정보 관리 프로그램 ************\n"
+				+ "1. 새 사원 정보 입력\n"
+				+ "2. 사원 정보 수정\n"
+				+ "3. 사원 정보 삭제\n"
+				+ "4. 사원정보 출력\n"
+				+ "9. 끝내기\n"
+				+ "********************************************\n"	
+				+ "선택하세요 => ");
+		
+		System.out.print( program );
+		
+	}
+	/*
+	public void modifyMenu(Employee t){ // +++ 사원정보 수정 메뉴 
+		String menu ="********** 사원 정보 수정 메뉴 **********\n"
+				+"1. 이름 변경 \n"
+				+"2. 급여 변경 \n"
+				+"3. 부서 변경 \n"
+				+"4. 직급 변경 \n"
+				+"5. 이전 메뉴로 이동 \n";
 
+		
+			System.out.println(menu);
+
+	}
+*/
 	public void empInput() { // 1. 키보드입력용 메소드 : empInput()
 	
 		Scanner sc2 = new Scanner (System.in);
@@ -46,19 +76,19 @@ public class Employee { //private + field 선언
 		setBonusPoint( sc2.nextDouble() );
 		
 		System.out.print("핸드폰 : ");
-		setPhone( sc2.next() );
+		sc2.nextLine();
+		setPhone( sc2.nextLine() );
 		
 		System.out.print("주소 : ");
-		sc2.next();
 		setAddress( sc2.nextLine() );	
 	
  	}
 	
 	
 	public void empOutput() { //2. emp객체 모든 필드 출력용 메소드 : empOutput()
-		
-		System.out.println( "사번 : "   	+ getEmpNo() );
-		System.out.println( "이름 : "   	+ getEmpName() );		
+			
+		System.out.println( "사번 : "   	+ getEmpNo()  );	
+		System.out.println( "이름 : " + getEmpName() );
 		System.out.println("소속부서 : " 	+ getDept() );
 		System.out.println("직급 : " 	  	+ getJob() );
 		System.out.println("나이 : "    	+ getAge());
@@ -192,4 +222,33 @@ public void mainMenu(){}
     3. 사원정보 출력 =>  empOutput() 메소드 실행
     9. 끝내기
 ********************************************
+*/
+
+
+
+/*
+ * 2022 09 21 실습문제 
+<객체실습>
+
+=>메뉴 화면의 예
+public void mainMenu(){}
+******* 사원 정보 관리 프로그램 ************
+
+    1. 새 사원 정보 입력  => empInput() 메소드 실행
+    2. 사원 정보 수정 => 부메뉴 나타남
+    3. 사원 정보 삭제
+    4. 사원정보 출력 =>  empOutput() 메소드 실행
+    9. 끝내기
+********************************************
+
+
+public void modifyMenu(Employee e){
+    //setter 이용해서 키보드로 입력받은 값 객체 필드에 기록
+}
+********** 사원 정보 수정 메뉴 **********
+    1. 이름 변경 => setEmpName()
+    2. 급여 변경 => setSalary()
+    3. 부서 변경 => setDept()
+    4. 직급 변경 => setJob()
+    5. 이전 메뉴로 이동 => return 처리할 것
 */
