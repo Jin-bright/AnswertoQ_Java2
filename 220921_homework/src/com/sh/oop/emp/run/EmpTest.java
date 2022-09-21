@@ -5,8 +5,7 @@ import com.sh.oop.emp.model.Employee;
 
 public class EmpTest { // 클래스 !!!! 
 
-	
-	
+
 	public static void main(String[] args) { //@메인메서드 
 		
 		Employee t = new Employee(); // Employee 객체 생성 
@@ -17,14 +16,12 @@ public class EmpTest { // 클래스 !!!!
 	}
 	
 	
-	
 	public void mainPlease() {  //@mainPlease 메서드 
 		
 		Scanner sc = new Scanner(System.in);
 		
 		EmpTest eee = new EmpTest();
 		Employee t =  new Employee();
-	
 		
 		//Q. 여기서 while이랑 for 쓰는거랑 차이가 뭐지 ? 
 		
@@ -44,42 +41,7 @@ public class EmpTest { // 클래스 !!!!
 						eee.modi(t);
 						break;
 							
-						
-						
-	/*					
-						t.modifyMenu(t);
-						System.out.print( "번호를 선택하세요 > ");
-						choice = sc.nextInt();
-						
 
-							if(choice==1) {
-								System.out.print( "이름 : "  );
-								t.setEmpName( sc.next());
-								break;  // Q. break를 안쓰면 출력이 안됐음. 왜지 ? break가 무슨 저장 기능을 하나.. ?
-								}
-								
-							else if(choice ==2 ) {
-								System.out.print( "급여 : "  );
-								t.setSalary( sc.nextInt()); 
-								break;
-								}
-							
-							else if(choice ==3) {
-								System.out.print( "부서 : "  );
-								t.setDept( sc.next() );
-								break;
-							}
-							
-							else if(choice ==4) {
-								System.out.print( "직급 : "  );
-								t.setJob( sc.next());
-								break;
-							}
-				
-							else if(choice==5) {
-								return;
-							}
-	*/
 					case 3 : // 3. 사원 정보 삭제 
 			
 						t.setEmpNo(0);
@@ -123,9 +85,6 @@ public class EmpTest { // 클래스 !!!!
 		
 		Scanner sc = new Scanner(System.in);
 
-		Employee t = new Employee();
-		
-		
 
 		String menu ="********** 사원 정보 수정 메뉴 **********\n"
 				+"1. 이름 변경 \n"
@@ -139,36 +98,41 @@ public class EmpTest { // 클래스 !!!!
 			System.out.print( "번호를 선택하세요 > ");
 			int choice = sc.nextInt();
 
-				if(choice==1) {
-					System.out.print( "이름 : "  );
-					t.setEmpName( sc.next() );
-					break;
-					 // Q. break를 안쓰면 출력이 안됐음. 왜지 ? break가 무슨 저장 기능을 하나.. ?
-					}
+				switch(choice) {
+					case 1 :
+						System.out.print( "이름 : "  );
+						e.setEmpName( sc.next() );
+						break;
+						 // Q. break를 안쓰면 출력이 안됐음. 왜지 ? break가 무슨 저장 기능을 하나.. ?
 					
-				else if(choice ==2 ) {
-					System.out.print( "급여 : "  );
-					t.setSalary( sc.nextInt() ); 
-					break;
-					}
+					
+					case 2 :
+						System.out.print( "급여 : "  );
+						e.setSalary( sc.nextInt() ); 
+						break;
+					
 				
-				else if(choice ==3) {
-					System.out.print( "부서 : "  );
-					t.setDept( sc.next() );
-					break;
-				}
+					case 3 :
+						System.out.print( "부서 : "  );
+						e.setDept( sc.next() );
+						break;
 				
-				else if(choice ==4) {
-					System.out.print( "직급 : "  );
-					t.setJob( sc.next());
-					break;
-				}
+				
+					case 4 :
+						System.out.print( "직급 : "  );
+						e.setJob( sc.next());
+						break;
+					
 	
-				else if(choice==5) {
-					return;
+					case 5 :
+						return;
 				}
 				
-			}// break를 만들기 위해 while true문을 만듬 .. ?	
+			}// switch - case 
+		/*
+		 *  Q. 2번사원정보 수정 눌러서 입력하고 다시 이전으로 돌아가서 출력하면 안됨,, 왜 ????!!! 
+		 *  그래서 employee e 쓰고, e.setJob 이런식으로 썼음 ,, 그러니까 됨 ,, 왜 ???
+		 */
 			
 		
 	}

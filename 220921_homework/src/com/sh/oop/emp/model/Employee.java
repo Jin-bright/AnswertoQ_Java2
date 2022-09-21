@@ -33,20 +33,8 @@ public class Employee { //private + field 선언
 		System.out.print( program );
 		
 	}
-	/*
-	public void modifyMenu(Employee t){ // +++ 사원정보 수정 메뉴 
-		String menu ="********** 사원 정보 수정 메뉴 **********\n"
-				+"1. 이름 변경 \n"
-				+"2. 급여 변경 \n"
-				+"3. 부서 변경 \n"
-				+"4. 직급 변경 \n"
-				+"5. 이전 메뉴로 이동 \n";
 
-		
-			System.out.println(menu);
-
-	}
-*/
+	
 	public void empInput() { // 1. 키보드입력용 메소드 : empInput()
 	
 		Scanner sc2 = new Scanner (System.in);
@@ -84,7 +72,6 @@ public class Employee { //private + field 선언
 	
  	}
 	
-	
 	public void empOutput() { //2. emp객체 모든 필드 출력용 메소드 : empOutput()
 			
 		System.out.println( "사번 : "   	+ getEmpNo()  );	
@@ -99,7 +86,6 @@ public class Employee { //private + field 선언
 		System.out.println("주소 : " 		+ getAddress() );
 	
 	}
-	
 	
     //3. getter/setter메소드
 	//1)  getter/setter메소드
