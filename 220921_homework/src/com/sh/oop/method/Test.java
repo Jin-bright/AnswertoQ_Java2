@@ -6,7 +6,8 @@ public class Test {
        static int s = 99; // cv 
        
        public static void main(String[] args) {
-           Test t = new Test(); //객체 생성 
+           Test t = new
+        		   Test(); //객체 생성 
            t.test1(); // 1번쨰로 출력됨 
            
            t.test2(); // 2번쨰로 출력됨 
@@ -15,8 +16,7 @@ public class Test {
            t.test3(t3); // 3번쨰로 출력됨 
            System.out.println(t3.a); // 5번째로 출력값 : 200 아닌가 .. ? 10..?인가  ?<  test3의 메서드의 a 값은  t.a ?
            
-           
-     
+
                
        }
 
@@ -26,9 +26,10 @@ public class Test {
            System.out.println(this.a);  // 1번째 출력값  : 100
            
            System.out.println(Test.s);    // 2번째로 출력값 : 99
-           
+           //if 그냥 a, s를 찍으면 가까이 있는 1000, 999가 출력됨(지역변수 ) 
        }
 
+       
        public void test2() {
            Test t = new Test();
            t.a = 1000;
