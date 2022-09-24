@@ -83,6 +83,8 @@ public class EmpTest { // 클래스 !!!!
 	
 	public void modi(Employee e){ // +++ 사원정보 수정 메뉴 
 		
+		//이거는 메서드?
+		Employee t = new Employee();
 		Scanner sc = new Scanner(System.in);
 
 

@@ -9,23 +9,27 @@ public class Test {
            Test t = new Test(); 
            t.test1(); 
            
-           t.test2(); 
+           Test t2 = new Test();
+           t2.test2();
+           
            
            Test t3 = new Test(); 
            t.test3(t3); 
 
-           System.out.println( "정답은 1220 : " + t.a);
+           System.out.println(  + t.a);
        }
 
        
        public void test1() { 
-           int a = 100;  
-           int s = 1592;
-           System.out.println("정답은 200 : " + this.a);  
+           int a = 12;  
+           int s = 155;
+           this.a = 19;
+           
+           System.out.println("정답은  : 19 => " + this.a);  // 19 
  
-          System.out.println(" 정답은 24 : " +  Test.s);    
-          System.out.println(" 정답은 24 : " + this.s );
-          System.out.println(" 정답은 100 : " +  a ); 
+          System.out.println(" 정답은 24 : => " +  Test.s);    
+          System.out.println(" 정답은  24 : => " + this.s );
+          System.out.println(" 정답은  12(아무것도 안붙은 a는 가까운거 가리키는거아닌가?) : " +  a ); 
  
        
        }
@@ -34,23 +38,25 @@ public class Test {
        public void test2() {
     	   
            Test t = new Test();
-           t.a = 123; 
+           t.a = 12; 
            
-          System.out.println(" 정답은 123이 없다 왜? 여기 a는 존재하지 않아서 그러면 200!  : " + a); // ★★★★★   
-          System.out.println(" 정답은 123 !!!  : " + t.a ); // 다시  200 ? // ★★★★★
-          System.out.println(" 정답은 200!!!  : " + this.a); // ★★★★★ 
+          System.out.println(" 정답은 200(가까운게 200) : =>  " + a); // ★★★★★   
+          System.out.println(" 정답은   12 : => " + t.a ); //★★★★★
+          System.out.println(" 정답은 200 : => " + this.a); // ★★★★★ 
            
            
            
        }
 
-       public void test3(Test t) {  
-           t.a = 10000; 
+       public void test3(Test t) { 
+    	   Test t2 = new Test();
+    	   
+           t2.a = 100; 
+           this.a = 10;
            
-           this.a = 1220;
-           System.out.println( " 정답은 10000!! : " + t.a); 
-           System.out.println( " 정답은 1220!! :  " + this.a );////// 왜 ???? this.a 가 적혀있어서 ? 
-           System.out.println( " 정답은  1220!! :  " +  a ); // 다시 
+           System.out.println( " 정답은 : 200 => iv " + t.a); 
+           System.out.println( " 정답은 : 10 "  + this.a );///
+           System.out.println( " 정답은 : 10 "  +  a ); 
        }
        
 
