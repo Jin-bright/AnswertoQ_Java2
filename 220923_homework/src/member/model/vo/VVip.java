@@ -42,7 +42,7 @@ public class VVip {
 	}
 
 	public double getInPoint() {
-		return point*1.15;
+		return point*0.15;
 	}
 	
 }

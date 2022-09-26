@@ -37,6 +37,6 @@ public class Vip {
 	}
 
 	public double getInPoint() {
-		return point*1.1;
+		return point*0.1;
 	}
 }
