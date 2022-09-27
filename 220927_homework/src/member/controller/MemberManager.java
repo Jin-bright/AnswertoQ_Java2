@@ -4,14 +4,11 @@ import member.model.vo.*;
 
 public class MemberManager {
 
-	public Member[] member = new Member[40];
-	
+	private Member[] member = new Member[40];
 	private int index  = 0;
-//	private int index_gold=0;
-//	private int index_vip=0;
-//	private int index_vvip=0;
-	
+
 	public void insertMember(Member m) { 
+			
 		if( m instanceof Silver) {
 			member[index++] = (Silver)m;				
 		}
@@ -24,10 +21,12 @@ public class MemberManager {
 		else
 			member[index++] = (VVip)m;	
 	}
-	/*
-	 *  Member 변수 m => new Silver("홍길동", "Silver",1000) 이걸 s,g,,바꾸고
-	 *  각각넣기 index 하나로도 되는데 ..? 
-	 */
+/* ★★ 더 간단한 방법 !! 
+
+이미 new Silver ( ) 타입이 정해져있으니까 instanceof 안해줘도됐음  
+member[index++] = m;	
+
+ */
 	
 
 	public void printData() {
@@ -35,9 +34,7 @@ public class MemberManager {
 	        	 + "이름              등급            포인트            이자포인트  \n"
 		         + "----------------------------------------------------------");
 
-		
-
-		for(int i=0; i<member.length; i++) {
+		for(int i=0; i<index; i++) {
 			if( member[i] instanceof Silver) {
 				System.out.println( ((Silver)(member[i])).info() ); 
 			}	
@@ -47,14 +44,24 @@ public class MemberManager {
 			else if(member[i] instanceof Vip) {
 				System.out.println( ((Vip)member[i]).info());
 			}
-			else if(member[i] instanceof VVip)
-				System.out.println( ((VVip)member[i]).info()  );
+			else
+				System.out.println( ((VVip)member[i]).info() );	
+		}// end for문
+
+/* ★★ 더 간단한 방법 !! 
+
+for(int i=0; i<index; i++) {
+	System.out.println( member[i].info() );
+}
 			
-		}// end for	
-		// 이거 끝까지 else if안쓰면 nullpoint,,,에러남
+★ 이거 i<member.length를 쓰면 끝까지 else if 안쓰면 nullpoint~에러남
+★ 그리고 아예 타입 선언 안하고 위처럼도 가능 
+   
+ */
 	}
-		
-}	
+
+}
+
 /*
 
 Control 클래스 이름 : memer.controller.MemberManager
