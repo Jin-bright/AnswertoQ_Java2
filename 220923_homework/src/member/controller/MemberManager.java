@@ -29,15 +29,27 @@ public class MemberManager {
 	public Silver silverInsert( Silver silvers ) {
 	// Q. 객체 선언을따로 안해줘도되나 ? 왜?? 
 		
-		silvers.getName();
-		silvers.getGrade();
-		silvers.getInPoint();
+//		silvers.getName();
+//		silvers.getGrade();
+//		silvers.getInPoint();
 
 		silver[index++] = silvers;
 
 		return silvers;
 	
 	}// end silverInsert 메서드 
+	
+/*  선생님답안 	
+	public void goldInsert(Gold g) {
+		this.golds[goldIndex++] = g; 
+	
+	여기서 this는 없어도 됨. 
+	그리고 이 silver[index++] silvers  <여기 silvers가 객체 
+	}
+  
+ */
+	
+	
 	
 	public Gold goldInsert( Gold golds ) {
 		golds.getName();
@@ -72,7 +84,7 @@ public class MemberManager {
 	}
 	
 	
-	// 4. printData 메서드 => 호출하는 코드 ( 더 간단하게 출력하는 방법 생각해보자 )  
+	// 4. printData 메서드 => 호출하는 코드
 	public void printData() {
 	
 		System.out.println("---------------------------<<회원정보>>------------------------------\n"
