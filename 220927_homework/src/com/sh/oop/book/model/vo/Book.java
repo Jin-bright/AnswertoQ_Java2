@@ -85,6 +85,9 @@ public class Book {
 	
 	@Override
 	public Book clone() {
+		//Book b = new Book(this);
+		// return (this);
+		 
 		return new Book(this); // ★이렇게 쓰는거 기억하기 
 		// 새로운 book객체를 만든다
 	}

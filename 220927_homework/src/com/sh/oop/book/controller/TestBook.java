@@ -1,11 +1,10 @@
 package com.sh.oop.book.controller;
-
 import com.sh.oop.book.model.vo.Book;
-
 public class TestBook {
 
 	public static void main(String[] args) {
 		
+	
 		Book book1 = new Book("해리포터", "조앤", 10000);
 		Book book2 = new Book("개미", "베르나르", 20000);
 		Book book3 = new Book("해리포터", "조앤", 10000); //★equals 동등성 비교 
