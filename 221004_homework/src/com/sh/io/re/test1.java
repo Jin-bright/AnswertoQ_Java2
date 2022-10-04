@@ -16,7 +16,7 @@ public class test1 {
 		    t.fileRead();	
 	}
 	
-	public void fileSave() { // ★★★ InputStreamReader : 바이트 -> 문자랑 연결 ★★★
+	public void fileSave() { // ★★ InputStreamReader : 바이트 -> 문자랑 연결 ★★
 		
 		//1. 키보드로 사용할 파일명을 입력받음 - BufferedReader의 readLine() 사용함
 		System.out.print("사용할 파일명을 입력하세요 > ");
@@ -24,7 +24,7 @@ public class test1 {
 		BufferedReader br = new BufferedReader( new InputStreamReader(System.in)); //★1.파일이름입력
 	
 		try {
-			filename = br.readLine(); //  BufferedReader의 readLine() 사용함
+			filename = br.readLine(); 
 			File file = new File ( filename ); // 사용할 파일명 
 		}// end-try문
 		
@@ -54,24 +54,11 @@ public class test1 {
 		
 		finally { //3. 버퍼 다쓰고 닫기용(파일이름지정 & 파일 내용 지정) 
 			try {
-				br.close(); 
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			
-			try {
-				input.close(); 
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			try {
 				fw.close(); 
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			
-		}//end - finally
-		
+		}//end - finally (표준 입출력 스트림은 닫아 주지 않아도 된다.)	
 	}
 	
 	public void fileRead() { // FileReader- 문자용 
@@ -85,22 +72,21 @@ public class test1 {
 		StringBuilder stringbuilder_data = new StringBuilder();//StringBuilder
 		
 		FileReader FR = null;
-	//	FileWriter FW= null; - 필요없음
+	//	FileWriter FW= null; <- 필요없음
 		try {
 			filename = br.readLine();
 			FR = new FileReader(filename); // 파일 읽는거(read) - 파일 읽기용 스트림 객체 생성함			
-	//	FW = new FileWriter(filename); - 필요없음	
+	//	FW = new FileWriter(filename); <- 필요없음	
 			
 			System.out.println("내용출력 >");
 			while( (data = FR.read()) != -1 ) {
 				String str = ( (char)data + "" )  ;  
-				stringbuilder_data.append(str);
-				stringbuilder_data.append("\n");
+				stringbuilder_data.append( (char)data + "" + "\n" ); // stringbuilder_data.append("\n");
 				System.out.print( str.toString() ); //출력 
 			}
 		}//end-try	
 
-		catch (IOException e) {		
+		catch (Exception e) {		
 			e.printStackTrace();
 		}//end-catch
 
@@ -115,11 +101,9 @@ public class test1 {
 		
 	}
 	
-
 }
 
 /*
-
 [실습문제 1]
 - 패키지 : com.sh.io.test1
 - 클래스 : Test1
