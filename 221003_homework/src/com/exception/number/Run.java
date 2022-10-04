@@ -36,7 +36,9 @@ public class Run {
 		}
 		
 		catch (NumberRangeException e) {
-			System.err.println("1부터 100사이의 값이 아닙니다.");
+	//		System.err.println("1부터 100사이의 값이 아닙니다."); 
+	//		 ㄴ 이 경우 내가 에러메시지란에 입력한게 아니고 출력되도록 한거 
+			System.err.println( e.getMessage() );
 		}
 		
 		

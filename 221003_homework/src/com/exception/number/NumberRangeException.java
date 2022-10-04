@@ -2,9 +2,14 @@ package com.exception.number;
 
 public class NumberRangeException extends Exception {
 
-	public NumberRangeException(String string) {
+	
+	public NumberRangeException(String message) {  // checked 예외로 해서
+		super(message);
 		// TODO Auto-generated constructor stub
 	} // 사용자정의 예외 클래스 
+	
+	
+	
 
 	
 }

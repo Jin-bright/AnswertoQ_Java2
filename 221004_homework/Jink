@@ -1,0 +1,3 @@
+메소드2에서 왜 
+FW = new FileWriter(filename);	
+이거 쓰면 안나오지  ?

@@ -8,7 +8,7 @@ public class NumberProcess {
 	}
 	
 	
-	public boolean checkDouble(int a, int b) throws NumberRangeException{
+	public boolean checkDouble(int a, int b) throws NumberRangeException{ // checked 예외
 			
 			if( (a>=1 && a<=100) && (b>=1 && b<=100) ) {
 				if( a%b ==0 ) {
@@ -18,11 +18,11 @@ public class NumberProcess {
 					return false;
 			}
 			
-			else
-				throw new NumberRangeException("1~100사이가 아니다");
+			else 
+				throw new NumberRangeException("1부터 100사이의 값이 아닙니다.");
+			
 	
 	}
-	
 
 }
 
