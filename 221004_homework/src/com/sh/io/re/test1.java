@@ -12,8 +12,8 @@ public class test1 {
 	public static void main(String[] args) { // ★★★★★★다시 - 키보드로 입력받기 
 		
 		test1 t = new test1();
-		 // t.fileSave();
-		    t.fileRead();	
+		    t.fileSave();
+		   // t.fileRead();	
 	}
 	
 	public void fileSave() { // ★★ InputStreamReader : 바이트 -> 문자랑 연결 ★★
@@ -21,29 +21,26 @@ public class test1 {
 		//1. 키보드로 사용할 파일명을 입력받음 - BufferedReader의 readLine() 사용함
 		System.out.print("사용할 파일명을 입력하세요 > ");
 		String filename=null;
-		BufferedReader br = new BufferedReader( new InputStreamReader(System.in)); //★1.파일이름입력
+		BufferedReader br = new BufferedReader( new InputStreamReader(System.in)); //★1.파일이름입력용 
 	
-		try {
-			filename = br.readLine(); 
-			File file = new File ( filename ); // 사용할 파일명 
-		}// end-try문
-		
-		catch (IOException e) {
-			e.printStackTrace();
-		}// end - catch문 
-				
 		//2. 파일안에 들어갈 내용 (입/출력) 
-		System.out.println("파일에 저장할 내용을 입력하시오.");
+//		System.out.println("파일에 저장할 내용을 입력하시오.");
 		BufferedReader input = null;
 		FileWriter fw = null;
-		try {
-			input = new BufferedReader( new InputStreamReader(System.in)); //★2-1 입력 
-			fw = new FileWriter( filename ); //★2-2 출력 
+		/*** 어디에 이 파일을 저장할거니 ? 써줘야됨
+		 * if (!test1.exists())	
+		 * 		test1.mkdir();
+		 */
+		try {			
+			filename = br.readLine(); 
+			File file = new File ( filename ); // 사용할 파일명 
+			
+			input = new BufferedReader( new InputStreamReader(System.in)); //★2-1 입력 이거 br로 계속 사용가능??  < 아니 
+			fw = new FileWriter( filename ); //★2-2 출력  
 			String data;
 			
-			while( !((data = input.readLine()).equals( "exit"))  ) {
-				fw.write(data);
-				fw.write("\n");
+			while( !((data = input.readLine()).equals( "exit"))  ) {   // ※ "exit".equals(data) < 똑같은거임 
+				fw.write(data + "\n" );  // ※ fw.write( data + "\n" )  < 위 두문장을 한문장으로 쓰기  
 			}
 			System.out.println("파일에 성공적으로 저장되었습니다.");	
 		} // end-try문 
@@ -72,11 +69,9 @@ public class test1 {
 		StringBuilder stringbuilder_data = new StringBuilder();//StringBuilder
 		
 		FileReader FR = null;
-	//	FileWriter FW= null; <- 필요없음
 		try {
 			filename = br.readLine();
 			FR = new FileReader(filename); // 파일 읽는거(read) - 파일 읽기용 스트림 객체 생성함			
-	//	FW = new FileWriter(filename); <- 필요없음	
 			
 			System.out.println("내용출력 >");
 			while( (data = FR.read()) != -1 ) {

@@ -28,7 +28,7 @@ public class test1_ree {
 			
 			while( !(( data = input.readLine()).equals( "exit"))  ) {
 				fw.write(data);
-				fw.write("\n");
+				fw.write("\n"); // fw.write( data + "\n" ) 한문장으로 쓰기 
 			}
 			System.out.println("파일에 성공적으로 저장되었습니다.");	
 		} // end-try문 
