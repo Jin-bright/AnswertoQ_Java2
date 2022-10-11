@@ -65,7 +65,15 @@ public class MemberTest {
 	//	System.out.println(membermap.get( "yooon")); //원래 yooon 
 		//값 변경 + 출력 
 		membermap.put("yooon",new Member("yooon", "5678", "윤동주", 27, "01034563456")); //replace도 가능 
-	//	System.out.println(membermap.get( "yooon"));
+		System.out.println(membermap.get( "yooon"));
+	/*	Member member = membermap.get("yooon");
+		member.setUserPwd("5678");
+		member.setUserName("윤동주");
+		member.setAge(27);
+		member.setPhoneNumber("01034563456");
+		
+		System.out.println(member);
+	*/	
 	}
 	
 	private void test4() {
