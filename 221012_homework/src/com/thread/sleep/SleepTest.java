@@ -23,9 +23,9 @@ public class SleepTest {
 						   "So what", "끝까지 간다",
 						   "No pain,No gain", "Eat,Pray,Love","할수있다"};
 
-		public MyThread() {
-			super();
-		}
+	//	public MyThread() {
+	//		super();
+	//	} 안써도됨
 
 		@Override
 		public void run() {
