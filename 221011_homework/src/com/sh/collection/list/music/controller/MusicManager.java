@@ -1,5 +1,9 @@
 package com.sh.collection.list.music.controller;
-
+/**
+ * < controller >
+ * 데이터를 관리하는 클래스 
+ * 
+ */
 import java.util.*;
 import com.sh.collection.list.music.model.vo.Music;
 
@@ -33,6 +37,7 @@ public class MusicManager {
 		for( int i=0; i<mlist.size();i++) {
 			if ( ((mlist.get(i)).getTitle()).equals(mtitle)) {
 				mlist.remove(i);
+				//동일한 요소를 제거한다 mlist.remove(mlist.get(i))
 				return true;
 			}
 		}
@@ -41,13 +46,15 @@ public class MusicManager {
 	
 	 public boolean replaceMusic(Music oldMusic, Music newMusic) {//5. 특정곡을 바꾸는 메소드
 		 
-		 int index = 0; 
+		 //int index = 0; 
 		 for( int i=0; i<mlist.size(); i++) {
-				if ( ((mlist.get(i)).getTitle()).equals(oldMusic.getTitle()) 
-						&& ((mlist.get(i)).getSinger()).equals(oldMusic.getSinger()) ) {
-					
-					index = i;
-					mlist.set(index, newMusic);
+			//	if ( ((mlist.get(i)).getTitle()).equals(oldMusic.getTitle()) 
+			//			&& ((mlist.get(i)).getSinger()).equals(oldMusic.getSinger()) ) {
+				if( oldMusic.equals(mlist.get(i)) ) { // 이게 맞게될려면 music에 equals랑 해야되나 ? 
+			 
+					//index = i;
+				//	mlist.set(index, newMusic);
+					mlist.set(i,newMusic );
 				}
 				return true;
 		 }
@@ -66,7 +73,7 @@ public class MusicManager {
 	 
 	 public List<Music> searchMusicBySinger(String singer){ // 7. 가수명으로 검색 메소드
 		 List<Music> listsamesinger = new ArrayList<>();
-		 for(int i=0; i<mlist.size(); i++) { //대소문자구분x
+		 for(int i=0; i<mlist.size(); i++) { // 대소문자구분x
 			 if (((mlist.get(i)).getSinger()).toLowerCase().contains(singer.toLowerCase())) {
 				 listsamesinger.add(new Music( (mlist.get(i)).getTitle(), (mlist.get(i)).getSinger() ));
 			 }
@@ -74,6 +81,7 @@ public class MusicManager {
 		 return listsamesinger; 
 	 }
 	 
+	
 	 public List<Music> orderBy (Comparator<Music> c) { // ★정렬용 Comparator + compare (o1, o2) 이렇게 
 		 Collections.sort(mlist, c);//정렬
 		 return mlist;

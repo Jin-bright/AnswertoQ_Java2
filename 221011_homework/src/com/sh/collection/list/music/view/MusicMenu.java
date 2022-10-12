@@ -1,5 +1,14 @@
 package com.sh.collection.list.music.view;
-
+/**
+ * view - 사용자가 보게될 화면 담당  
+ *  < 하는일 >
+ * - menu
+ * - uwer input 
+ * - result 
+ * view가 아닌데서는 사용자입력받지 않는다. 
+ * 출력하지 않는다 
+ * 
+ */
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
@@ -44,7 +53,7 @@ public class MusicMenu {
 			
 			switch(a) {
 				case 1:
-					System.out.println( printList() );
+					printList( manager.selectList());
 					break;
 				case 2: 
 					manager.addList( inputMusic() );					
@@ -57,6 +66,7 @@ public class MusicMenu {
 					break;
 				case 5:
 					System.out.println(manager.replaceMusic(changeMusic(), inputMusic()));
+//					System.out.println( (manager.replaceMusic(changeMusic(), inputMusic())==true) ? "삭제 성공" : "삭제 실패");
 					break;
 				case 6:
 					System.out.println(manager.searchMusicByTitle(inputTitle()));
@@ -75,24 +85,28 @@ public class MusicMenu {
 							case 1 :
 								System.out.println("1.가수명 오름차순");
 								manager.orderBy(comparatorSignerAsc);
-								System.out.println(manager.mlist );
+								printList(manager.mlist); //새로 호출하는 코드 
+								//System.out.println( manager.mlist );
 								break;
 
 							case 2 :
 								System.out.println("2.가수명 내림차순");
 								manager.orderBy(comparatorSignerDesc);
-								System.out.println(manager.mlist );
+								printList(manager.mlist);
+								//System.out.println(manager.mlist );
 								break;
 								
 							case 3 :
 								System.out.println("3.곡명 오름차순");
 								manager.orderBy( comparatorTitleAsc );
-								System.out.println( manager.mlist );//목록바로 호출 
+								printList(manager.mlist);
+								//System.out.println( manager.mlist );//목록바로 호출 
 								break;
 							case 4 :								
 								System.out.println("4.곡명 내림차순");
 								manager.orderBy( comparatorTitleDesc );
-								System.out.println( manager.mlist );//목록바로 호출 
+								printList(manager.mlist);
+								//System.out.println( manager.mlist );//목록바로 호출 
 								break;
 								
 							case 5 :
@@ -107,9 +121,24 @@ public class MusicMenu {
 		}
 	}
 
-	public List<Music> printList() {
+	public  void printList(List<Music> list) { //★ 목록 내가원하는대로 호출 
 
-		return manager.mlist;
+		//return manager.mlist;
+		System.out.println("==========================================");
+		if(!list.isEmpty()) {
+			System.out.println("곡명\t\t가수");
+			System.out.println("---------------------------------------------------");
+			//1.for(index)
+			//2.iterator
+			//3.foreach
+			for(Music m : list)
+				System.out.println(m);
+		}
+		else {
+			System.out.println("찾으시는 곡이 없습니다.");
+		}
+		System.out.println("---------------------------------------------------\n");
+		
 		
 	}
 
