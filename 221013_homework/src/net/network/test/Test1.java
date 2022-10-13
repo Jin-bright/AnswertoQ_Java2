@@ -10,23 +10,24 @@ public class Test1 {
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.print("호스트명 또는 도메인명을 입력하세요 > ");
-		// Q. 호스트명이랑 도메인명이랑 무슨차이지 ? 따로 인식할 수 있나 ? 
+		
 		String puthostordomain = sc.nextLine();
 
 		try  { 
 			InetAddress[] hostordomain = InetAddress.getAllByName(puthostordomain);
 			for(int i=0; i<hostordomain.length; i++) {		
 				System.out.println( "ip주소 : " + hostordomain[i].getHostAddress()  );
-			}
-			
+			}	
 		}	
 		catch (UnknownHostException e) {
 			System.out.println("반환된 ip주소가 없습니다!");
 		//	e.printStackTrace();
 		} 
 	}
-	// Q. Scanner 써써 URL클래스로도 받을 수 있나 ?
 }
+
+// Q. Scanner 써써 URL클래스로도 받을 수 있나 ?
+// Q. 호스트명이랑 도메인명이랑 무슨차이지 ? 따로 인식할 수 있나 ? 
 
 /*
 <네트워크 실습>
