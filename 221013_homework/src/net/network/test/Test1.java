@@ -1,7 +1,6 @@
 package net.network.test;
 
 import java.net.InetAddress;
-import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
@@ -13,11 +12,9 @@ public class Test1 {
 		System.out.print("호스트명 또는 도메인명을 입력하세요 > ");
 		// Q. 호스트명이랑 도메인명이랑 무슨차이지 ? 따로 인식할 수 있나 ? 
 		String puthostordomain = sc.nextLine();
-				
-		InetAddress[] hostordomain;
+
 		try  { 
-			hostordomain = InetAddress.getAllByName(puthostordomain);
-	
+			InetAddress[] hostordomain = InetAddress.getAllByName(puthostordomain);
 			for(int i=0; i<hostordomain.length; i++) {		
 				System.out.println( "ip주소 : " + hostordomain[i].getHostAddress()  );
 			}
@@ -30,7 +27,6 @@ public class Test1 {
 	}
 	// Q. Scanner 써써 URL클래스로도 받을 수 있나 ?
 }
-
 
 /*
 <네트워크 실습>
