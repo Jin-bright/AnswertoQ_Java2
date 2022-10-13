@@ -1,8 +1,6 @@
 package com.sh.collection.map.book;
 
 import java.util.Scanner;
-import java.util.Set;
-import java.util.Map.Entry;
 
 import com.sh.collection.map.book.Controller.MapBookManager;
 import com.sh.collection.map.book.model.vo.Book;
@@ -13,7 +11,7 @@ public class TestBookManager {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		TestBookManager testbook = new TestBookManager();
+		//TestBookManager testbook = new TestBookManager();
 		MapBookManager mapBookmanager = new MapBookManager();
 		
 		stop:
@@ -23,16 +21,15 @@ public class TestBookManager {
 			
 			switch(choice) {
 				case 1 :
-					mapBookmanager.putBook( testbook.inputBook() ); //"1. 새 도서 추가
+					mapBookmanager.putBook( inputBook() ); //"1. 새 도서 추가
 					break;
 				case 2 :    // 도서정보 정렬후 출력 > sortedBookList() 실행=> Book[] 리턴받아 printBookList(Book[]) 실행
-					mapBookmanager.sortedBookList();
+					mapBookmanager.displayAll(mapBookmanager.sortedBookMap());
 					break;
 		/*		case 3 :
-					mapBookmanager.addBook( testbook.inputBook() );
+					
 					break;
 				case 4 :
-					mapBookmanager.addBook( testbook.inputBook() );
 					break;
 		*/
 				case 5 :	// 5. 전체 출력 + displayAll():void	

@@ -14,3 +14,15 @@ public class UpperAlphbetThread implements Runnable{
 		System.out.println( Thread.currentThread().getName() + " 출력 끝!" );
 	}
 }
+
+/* 
+ * 선생님 풀이 
+ * 
+ * for(int i ='A'; i<= 'Z'; i++){
+ * 	sysout. (name + " : " + (char)i);
+ * }
+ * 
+ * 
+ */
+
+

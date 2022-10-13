@@ -1,20 +1,19 @@
 package com.sh.collection.map.book.Controller;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import com.sh.collection.map.book.model.compare.AscTitle;
 import com.sh.collection.map.book.model.vo.Book;
 
 public class MapBookManager {
 
 	//필드
-	public Map<String,Book> booksMap = new HashMap<>();
-	Set< Entry<String, Book>> entrySet = booksMap.entrySet();
+	 Map<String,Book> booksMap = new HashMap<>();
+	 Set< Entry<String, Book>> entrySet = booksMap.entrySet();
 	
 	{
 		booksMap.put("200", new Book("200", 2, "나미야 잡화점의 기적", "히가시노 게이고"));
@@ -23,6 +22,7 @@ public class MapBookManager {
 		booksMap.put("300", new Book("300", 2, "미중전쟁", "김진명"));
 		booksMap.put("500", new Book("500", 1, "JAVA 삽질하기", "김동현"));
 	}
+	
 	//기본생성자 
 		
 	public MapBookManager() {
@@ -42,30 +42,50 @@ public class MapBookManager {
 		booksMap.put(book.getbNo(), book);
 	}
 
-	public void displayAll() {
-		
+	public void displayAll() { 
+		//★★★★ 바보 코드였음 ㅠㅠㅠㅠ 
+		//이렇게 하면 내가 무슨 짓을 해도 새로 만든 복사배열이 출력안됨 
+		//music이 잘 작동됐떤 이유는 내가 복사 한 배열 객체가 없어서여음 
 		for( Entry<String, Book> entry : entrySet ) {
 			Book value = entry.getValue();
 			System.out.println( value);
 		}
-	}//
-	
-	
-	public Book[] sortedBookList() {
-		Book[] bookarr = new Book[booksMap.size()];
-		//Set< Entry<String, Book>> entrySet = booksMap.entrySet();
-		
-		int i=0;
-		for( Entry<String, Book> entry : entrySet ) {
-			bookarr[i++] = entry.getValue();
-		}
-		
-//		Arrays.sort( bookarr, null );
-		Arrays.sort( bookarr, Collections.reverseOrder() );
-		return bookarr;
-		
-
 	}
+	public void displayAll(Book[] books) {
+		
+		for(Book book : books ) {
+			System.out.println(book);
+		}
+	}
+	
+	public Book[] sortedBookMap() {
+		
+		Book[] bookarr = new Book[booksMap.size()]; //먼저복사할 객체 배열 생성 
+		
+		Set< Entry<String, Book>> entrySet = booksMap.entrySet();
+		
+		int index=0;
+		for( Entry<String, Book> entry : entrySet ) {
+				bookarr[index++] = entry.getValue();
+			
+		}//end for문 
+		// System.out.println(Arrays.toString(bookarr));
+		
+		Arrays.sort(bookarr, new AscTitle() );
+		return bookarr;
+	}
+	
+	
+	
+
+}		
+
+	
+	
+	//    + sortedBookMap():Book[]
+            // 해당 도서명순으로 오름차순정렬해서 객체배열 리턴함
+	
+	
 	/*
 	 * Book[] bookArr = new Book[bookMap.size()];
 		// keyset -> key -> value을 배열로 옮겨담기
@@ -83,7 +103,7 @@ public class MapBookManager {
 	}
 
 	 */
-}
+
 
 /*
 @실습문제2

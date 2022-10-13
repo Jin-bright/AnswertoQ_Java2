@@ -1,9 +1,12 @@
 package com.sh.collection.map.book.model.vo;
 
-import java.util.Comparator;
+import java.util.Objects;
 
-public class Book implements Comparable<Book>{
+public class Book {
 	
+/* comparator - method : compare(o1,o2) - 별도클래스 구현 
+*/
+		
 		//Field
 		private String bNo; 	//도서번호
 		private int category;   //도서분류코드(1.인문/2.자연과학/3.의료/4.기타)
@@ -65,9 +68,26 @@ public class Book implements Comparable<Book>{
 		}
 
 		@Override
-		public int compareTo(Book other) {
-			return other.bNo.compareTo(this.bNo);
+		public int hashCode() {
+			return Objects.hash(author, bNo, category, title);
 		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Book other = (Book) obj;
+			return Objects.equals(author, other.author) && Objects.equals(bNo, other.bNo) && category == other.category
+					&& Objects.equals(title, other.title);
+		}
+
+		
+		
+
 
 	
 		
